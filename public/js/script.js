@@ -25,8 +25,7 @@ function loadData() {
 
         li.innerHTML =
           "<b>" + t.title + "</b> ₹" + t.amount +
-          " (" + t.category + ")" +
-          "<br><small>" + new Date(t.date).toDateString() + "</small>" +
+          "<br><small>" + t.category + " | " + new Date(t.date).toDateString() + "</small>" +
           " <a class='delete' href='/delete/" + t._id + "'>Delete</a>";
 
         list.appendChild(li);
