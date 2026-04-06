@@ -47,8 +47,15 @@ function loadCharts(category, income, expense) {
     data: {
       labels: Object.keys(category),
       datasets: [{
-        data: Object.values(category)
+        data: Object.values(category),
+        backgroundColor: [
+          "#ff6384", "#36a2eb", "#ffcd56",
+          "#4bc0c0", "#9966ff", "#ff9f40"
+        ]
       }]
+    },
+    options: {
+      responsive: true
     }
   });
 
@@ -57,8 +64,12 @@ function loadCharts(category, income, expense) {
     data: {
       labels: ["Income", "Expense"],
       datasets: [{
-        data: [income, expense]
+        data: [income, expense],
+        backgroundColor: ["green", "red"]
       }]
+    },
+    options: {
+      responsive: true
     }
   });
 }
