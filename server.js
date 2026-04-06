@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // MongoDB Atlas connection
-mongoose.connect("mongodb+srv://chaitanya07_07:chaitanya123@cluster0.ydqjanx.mongodb.net/expenseDB")
+mongoose.connect("mongodb+srv://chaitanya07_07:5REj87LUA69yFaa7@cluster0.ydqjanx.mongodb.net/expenseDB")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
