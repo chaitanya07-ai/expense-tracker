@@ -1,5 +1,4 @@
-// fetch transactions
-
+// load data
 function loadData() {
   fetch("/get")
     .then(res => res.json())
@@ -8,30 +7,72 @@ function loadData() {
       const list = document.getElementById("list");
       list.innerHTML = "";
 
+      let income = 0;
+      let expense = 0;
+      let category = {};
+
       for (let i = 0; i < data.length; i++) {
-        const item = document.createElement("li");
 
-        item.innerHTML =
-          data[i].title + " - ₹" + data[i].amount +
-          " (" + data[i].type + ")" +
-          " <a href='/delete/" + data[i]._id + "'>Delete</a>";
+        let t = data[i];
 
-        list.appendChild(item);
+        if (t.type === "income") income += t.amount;
+        else expense += t.amount;
+
+        if (!category[t.category]) category[t.category] = 0;
+        category[t.category] += t.amount;
+
+        let li = document.createElement("li");
+
+        li.innerHTML =
+          t.title + " ₹" + t.amount +
+          " (" + t.category + ")" +
+          " <a class='delete' href='/delete/" + t._id + "'>Delete</a>";
+
+        list.appendChild(li);
       }
+
+      document.getElementById("income").innerText = income;
+      document.getElementById("expense").innerText = expense;
+      document.getElementById("balance").innerText = income - expense;
+
+      loadCharts(category, income, expense);
     });
 }
 
-// fetch summary
-function loadSummary() {
-  fetch("/summary")
-    .then(res => res.json())
-    .then(data => {
-      document.getElementById("income").innerText = data.totalIncome;
-      document.getElementById("expense").innerText = data.totalExpense;
-      document.getElementById("balance").innerText = data.balance;
-    });
+// charts
+function loadCharts(category, income, expense) {
+
+  new Chart(document.getElementById("pieChart"), {
+    type: "pie",
+    data: {
+      labels: Object.keys(category),
+      datasets: [{
+        data: Object.values(category)
+      }]
+    }
+  });
+
+  new Chart(document.getElementById("barChart"), {
+    type: "bar",
+    data: {
+      labels: ["Income", "Expense"],
+      datasets: [{
+        data: [income, expense]
+      }]
+    }
+  });
 }
 
-// load on start
+// search
+function searchData() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let items = document.querySelectorAll("#list li");
+
+  for (let i = 0; i < items.length; i++) {
+    let text = items[i].innerText.toLowerCase();
+    items[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+
+// start
 loadData();
-loadSummary();
