@@ -8,31 +8,35 @@
 
 <body>
 
-<div class="app">
+<div class="phone">
 
-  <!-- TOP HEADER -->
-  <div class="header">
+  <!-- HEADER -->
+  <div class="top">
     <h2>Home</h2>
   </div>
 
   <!-- BALANCE CARD -->
-  <div class="balance-card">
-    <h4>Total Balance</h4>
+  <div class="balance">
+    <p>Total Balance</p>
     <h1>₹<span id="balance">0</span></h1>
   </div>
 
   <!-- MINI CARDS -->
-  <div class="mini-cards">
-    <div class="mini income">
-      <p>Total Income</p>
+  <div class="row">
+    <div class="box income">
+      <p>Total Salary</p>
       <h3>₹<span id="income">0</span></h3>
     </div>
 
-    <div class="mini expense">
+    <div class="box expense">
       <p>Total Expense</p>
       <h3>₹<span id="expense">0</span></h3>
     </div>
   </div>
+
+  <!-- ANALYTICS -->
+  <h3 class="title">Analytics</h3>
+  <canvas id="barChart"></canvas>
 
   <!-- FORM -->
   <form action="/add" method="POST">
@@ -47,23 +51,12 @@
     <input type="text" name="category" placeholder="Category">
     <input type="date" name="date">
 
-    <button type="submit">Add</button>
+    <button>Add</button>
   </form>
 
-  <!-- ANALYTICS -->
-  <h3 class="section-title">Analytics</h3>
-
-  <div class="charts">
-    <canvas id="barChart"></canvas>
-    <canvas id="pieChart"></canvas>
-  </div>
-
   <!-- TRANSACTIONS -->
-  <h3 class="section-title">Transactions</h3>
-
-  <div class="list">
-    <ul id="list"></ul>
-  </div>
+  <h3 class="title">Transactions</h3>
+  <ul id="list"></ul>
 
 </div>
 
