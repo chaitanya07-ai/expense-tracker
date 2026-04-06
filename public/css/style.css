@@ -1,109 +1,99 @@
 body {
   font-family: Arial;
+  background: #f5f6fa;
   margin: 0;
-  background: #f5f7fb;
 }
 
-/* hero section */
-.hero {
+/* main app */
+.app {
+  width: 350px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* header */
+.header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* balance card */
+.balance-card {
+  background: linear-gradient(135deg, #6a5cff, #3b2eff);
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+/* mini cards */
+.mini-cards {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  background: linear-gradient(135deg, #007bff, #00c6ff);
+}
+
+.mini {
+  width: 48%;
+  padding: 15px;
+  border-radius: 15px;
   color: white;
 }
 
-.hero-text h1 {
-  font-size: 32px;
+.income {
+  background: linear-gradient(135deg, #8e2de2, #4a00e0);
 }
 
-.hero-text p {
-  font-size: 16px;
-}
-
-.hero-img img {
-  width: 200px;
-}
-
-/* main container */
-.container {
-  width: 85%;
-  margin: auto;
-  margin-top: 20px;
+.expense {
+  background: linear-gradient(135deg, #ff7e5f, #ff3d2e);
 }
 
 /* form */
 form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  margin-top: 15px;
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 15px;
 }
 
 form input, form select {
-  width: 18%;
+  width: 100%;
+  margin: 5px 0;
   padding: 10px;
-  margin: 5px;
 }
 
 form button {
+  width: 100%;
   padding: 10px;
-  background: #007bff;
+  background: #ff7e5f;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
-/* cards */
-.summary {
-  display: flex;
-  justify-content: space-between;
+/* section */
+.section-title {
   margin-top: 20px;
 }
-
-.card {
-  width: 30%;
-  padding: 20px;
-  background: white;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.income { color: green; }
-.expense { color: red; }
 
 /* charts */
 .charts {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  flex-direction: column;
 }
 
 canvas {
-  width: 45% !important;
-  height: 250px !important;
   background: white;
+  margin-top: 10px;
   padding: 10px;
-  border-radius: 10px;
-}
-
-/* search */
-#search {
-  width: 100%;
-  padding: 10px;
-  margin-top: 20px;
+  border-radius: 15px;
 }
 
 /* list */
 .list {
-  margin-top: 20px;
+  margin-top: 10px;
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 li {
