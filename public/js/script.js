@@ -106,3 +106,4 @@ function loadTimeline(data) {
 
 // start
 loadData();
+loadTimeline(data);
