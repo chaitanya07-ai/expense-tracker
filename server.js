@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // connect mongodb
-mongoose.connect("mongodb+srv://chaitanya07_07:chaitanya123@cluster0.ydqjanx.mongodb.net/expenseDB");
+mongoose.connect("mongodb+srv://chaitanya07_07:chaitanya123@cluster0.ydqjanx.mongodb.net/expenseDB")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
