@@ -8,50 +8,73 @@
 
 <body>
 
+<!-- 🔥 HERO SECTION -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>💰 Expense Tracker</h1>
+    <p>Manage your money smartly and track your daily expenses</p>
+  </div>
+
+  <div class="hero-img">
+    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
 <div class="container">
 
-  <h1>💰 Expense Tracker</h1>
-  <p class="sub">Track your income and expenses easily</p>
+  <!-- FORM -->
+  <div class="box">
+    <h2>Add Transaction</h2>
 
-  <!-- form -->
-  <form action="/add" method="POST">
-    <input type="text" name="title" placeholder="Title" required>
-    <input type="number" name="amount" placeholder="Amount" required>
+    <form action="/add" method="POST">
+      <input type="text" name="title" placeholder="Title" required>
+      <input type="number" name="amount" placeholder="Amount" required>
 
-    <select name="type">
-      <option value="income">Income</option>
-      <option value="expense">Expense</option>
-    </select>
+      <select name="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
 
-    <input type="text" name="category" placeholder="Category">
-    <input type="date" name="date">
+      <input type="text" name="category" placeholder="Category">
+      <input type="date" name="date">
 
-    <button type="submit">Add</button>
-  </form>
+      <button type="submit">Add</button>
+    </form>
+  </div>
 
-  <!-- summary -->
+  <!-- SUMMARY -->
   <div class="summary">
-    <div class="card income">Income ₹<span id="income">0</span></div>
-    <div class="card expense">Expense ₹<span id="expense">0</span></div>
-    <div class="card">Balance ₹<span id="balance">0</span></div>
+    <div class="card income">💵 Income ₹<span id="income">0</span></div>
+    <div class="card expense">💸 Expense ₹<span id="expense">0</span></div>
+    <div class="card">📊 Balance ₹<span id="balance">0</span></div>
   </div>
 
-  <!-- charts -->
+  <!-- CHARTS -->
   <div class="charts">
-    <canvas id="pieChart"></canvas>
-    <canvas id="barChart"></canvas>
+    <div class="chart-box">
+      <h3>Category Breakdown</h3>
+      <canvas id="pieChart"></canvas>
+    </div>
+
+    <div class="chart-box">
+      <h3>Income vs Expense</h3>
+      <canvas id="barChart"></canvas>
+    </div>
   </div>
 
-  <div class="timeline">
+  <!-- TIMELINE -->
+  <div class="timeline box">
     <h2>📌 Recent Activity</h2>
     <div id="timeline"></div>
   </div>
 
-  <!-- search -->
-  <input type="text" id="search" placeholder="Search..." onkeyup="searchData()">
+  <!-- SEARCH -->
+  <input type="text" id="search" placeholder="Search transactions..." onkeyup="searchData()">
 
-  <!-- list -->
-  <div class="list">
+  <!-- TRANSACTIONS -->
+  <div class="list box">
+    <h2>Transactions</h2>
     <ul id="list"></ul>
   </div>
 
