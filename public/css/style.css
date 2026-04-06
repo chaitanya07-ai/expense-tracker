@@ -1,13 +1,18 @@
 body {
   font-family: Arial;
-  background: #f4f6f9;
   margin: 0;
+  background: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f") no-repeat center center/cover;
 }
 
+/* glass effect */
 .container {
-  width: 80%;
+  width: 85%;
   margin: auto;
   margin-top: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
@@ -37,10 +42,11 @@ form input, form select {
 
 form button {
   padding: 10px;
-  background: linear-gradient(45deg, blue, cyan);
+  background: linear-gradient(45deg, #007bff, #00c6ff);
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 /* cards */
@@ -56,12 +62,17 @@ form button {
   background: white;
   text-align: center;
   border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .income { color: green; }
 .expense { color: red; }
 
-/* charts */
+/* charts smaller */
 .charts {
   display: flex;
   justify-content: space-between;
@@ -69,10 +80,18 @@ form button {
 }
 
 canvas {
-  width: 45%;
+  width: 40% !important;
+  height: 250px !important;
   background: white;
   padding: 10px;
   border-radius: 10px;
+}
+
+/* search */
+#search {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
 }
 
 /* list */
@@ -90,5 +109,4 @@ li {
 
 .delete {
   color: red;
-  margin-left: 10px;
 }
