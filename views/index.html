@@ -8,73 +8,60 @@
 
 <body>
 
-<!-- 🔥 HERO SECTION -->
-<div class="hero">
-  <div class="hero-text">
-    <h1>💰 Expense Tracker</h1>
-    <p>Manage your money smartly and track your daily expenses</p>
+<div class="app">
+
+  <!-- TOP HEADER -->
+  <div class="header">
+    <h2>Home</h2>
   </div>
 
-  <div class="hero-img">
-    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+  <!-- BALANCE CARD -->
+  <div class="balance-card">
+    <h4>Total Balance</h4>
+    <h1>₹<span id="balance">0</span></h1>
   </div>
-</div>
 
-<!-- MAIN CONTENT -->
-<div class="container">
+  <!-- MINI CARDS -->
+  <div class="mini-cards">
+    <div class="mini income">
+      <p>Total Income</p>
+      <h3>₹<span id="income">0</span></h3>
+    </div>
+
+    <div class="mini expense">
+      <p>Total Expense</p>
+      <h3>₹<span id="expense">0</span></h3>
+    </div>
+  </div>
 
   <!-- FORM -->
-  <div class="box">
-    <h2>Add Transaction</h2>
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="number" name="amount" placeholder="Amount" required>
 
-    <form action="/add" method="POST">
-      <input type="text" name="title" placeholder="Title" required>
-      <input type="number" name="amount" placeholder="Amount" required>
+    <select name="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
 
-      <select name="type">
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
+    <input type="text" name="category" placeholder="Category">
+    <input type="date" name="date">
 
-      <input type="text" name="category" placeholder="Category">
-      <input type="date" name="date">
+    <button type="submit">Add</button>
+  </form>
 
-      <button type="submit">Add</button>
-    </form>
-  </div>
+  <!-- ANALYTICS -->
+  <h3 class="section-title">Analytics</h3>
 
-  <!-- SUMMARY -->
-  <div class="summary">
-    <div class="card income">💵 Income ₹<span id="income">0</span></div>
-    <div class="card expense">💸 Expense ₹<span id="expense">0</span></div>
-    <div class="card">📊 Balance ₹<span id="balance">0</span></div>
-  </div>
-
-  <!-- CHARTS -->
   <div class="charts">
-    <div class="chart-box">
-      <h3>Category Breakdown</h3>
-      <canvas id="pieChart"></canvas>
-    </div>
-
-    <div class="chart-box">
-      <h3>Income vs Expense</h3>
-      <canvas id="barChart"></canvas>
-    </div>
+    <canvas id="barChart"></canvas>
+    <canvas id="pieChart"></canvas>
   </div>
-
-  <!-- TIMELINE -->
-  <div class="timeline box">
-    <h2>📌 Recent Activity</h2>
-    <div id="timeline"></div>
-  </div>
-
-  <!-- SEARCH -->
-  <input type="text" id="search" placeholder="Search transactions..." onkeyup="searchData()">
 
   <!-- TRANSACTIONS -->
-  <div class="list box">
-    <h2>Transactions</h2>
+  <h3 class="section-title">Transactions</h3>
+
+  <div class="list">
     <ul id="list"></ul>
   </div>
 
