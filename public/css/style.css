@@ -1,52 +1,49 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  font-family: Arial;
   background: #f4f6f9;
+  margin: 0;
 }
 
 .container {
   width: 80%;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 h1 {
   text-align: center;
-  color: #333;
+}
+
+.sub {
+  text-align: center;
+  color: gray;
 }
 
 /* form */
 form {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 form input, form select {
+  width: 18%;
   padding: 8px;
   margin: 5px;
-  width: 18%;
 }
 
 form button {
   padding: 10px;
-  margin: 5px;
-  background: #007bff;
+  background: linear-gradient(45deg, blue, cyan);
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-form button:hover {
-  background: #0056b3;
-}
-
-/* summary cards */
+/* cards */
 .summary {
   display: flex;
   justify-content: space-between;
@@ -54,48 +51,44 @@ form button:hover {
 }
 
 .card {
-  background: white;
-  padding: 20px;
   width: 30%;
+  padding: 20px;
+  background: white;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
 }
 
-.card h2 {
-  margin: 0;
+.income { color: green; }
+.expense { color: red; }
+
+/* charts */
+.charts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+canvas {
+  width: 45%;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* list */
 .list {
   margin-top: 20px;
   background: white;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
 }
 
-.list ul {
-  list-style: none;
-  padding: 0;
-}
-
-.list li {
-  padding: 10px;
+li {
+  padding: 8px;
   border-bottom: 1px solid #ddd;
-  display: flex;
-  justify-content: space-between;
 }
 
-.income {
-  color: green;
-}
-
-.expense {
+.delete {
   color: red;
-}
-
-.delete-btn {
-  color: red;
-  text-decoration: none;
   margin-left: 10px;
 }
