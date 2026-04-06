@@ -110,3 +110,21 @@ li {
 .delete {
   color: red;
 }
+
+.timeline {
+  margin-top: 20px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.timeline-item {
+  border-left: 3px solid #007bff;
+  padding-left: 10px;
+  margin: 10px 0;
+}
+
+.timeline-item span {
+  color: gray;
+  font-size: 12px;
+}
