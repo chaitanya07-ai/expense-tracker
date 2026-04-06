@@ -24,9 +24,9 @@ function loadData() {
         let li = document.createElement("li");
 
         li.innerHTML =
-          "<b>" + t.title + "</b> ₹" + t.amount +
-          "<br><small>" + t.category + " | " + new Date(t.date).toDateString() + "</small>" +
-          " <a class='delete' href='/delete/" + t._id + "'>Delete</a>";
+          "<b>" + t.title + "</b> <span style='float:right'>₹" + t.amount + "</span>" +
+          "<br><small>" + t.category + " • " + new Date(t.date).toDateString() + "</small>" +
+          "<br><a class='delete' href='/delete/" + t._id + "'>Delete</a>";
 
         list.appendChild(li);
       }
