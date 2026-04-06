@@ -86,5 +86,23 @@ function searchData() {
   }
 }
 
+function loadTimeline(data) {
+  const timeline = document.getElementById("timeline");
+  timeline.innerHTML = "";
+
+  for (let i = data.length - 1; i >= 0; i--) {
+    let t = data[i];
+
+    let div = document.createElement("div");
+    div.className = "timeline-item";
+
+    div.innerHTML =
+      "<b>" + t.title + "</b> ₹" + t.amount +
+      "<br><span>" + new Date(t.date).toDateString() + "</span>";
+
+    timeline.appendChild(div);
+  }
+}
+
 // start
 loadData();
