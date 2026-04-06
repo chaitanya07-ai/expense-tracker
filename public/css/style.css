@@ -17,6 +17,9 @@ body {
 
 h1 {
   text-align: center;
+  background: linear-gradient(to right, #007bff, #00c6ff);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .sub {
@@ -63,6 +66,9 @@ form button {
   text-align: center;
   border-radius: 10px;
   transition: 0.3s;
+  background: linear-gradient(135deg, #ffffff, #f0f0f0);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
 }
 
 .card:hover {
