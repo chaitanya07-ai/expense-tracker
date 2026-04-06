@@ -1,71 +1,92 @@
 body {
-  background: #eaeaf0;
-  font-family: Arial;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #eef1f6;
 }
 
-/* phone style container */
+/* center mobile UI */
 .phone {
-  width: 350px;
-  margin: auto;
+  width: 360px;
+  margin: 30px auto;
   background: #f9f9fb;
-  padding: 15px;
   border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 /* header */
 .top {
   text-align: center;
-  margin-bottom: 10px;
+  font-weight: 600;
 }
 
 /* balance card */
 .balance {
-  background: linear-gradient(135deg, #3b2eff, #6a5cff);
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
   color: white;
   padding: 20px;
   border-radius: 20px;
-  margin-bottom: 15px;
+  margin-top: 15px;
+  position: relative;
 }
 
-/* row */
+/* mini cards */
 .row {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
+  margin-top: 15px;
 }
 
-/* small cards */
 .box {
-  width: 48%;
+  flex: 1;
   padding: 15px;
   border-radius: 15px;
   color: white;
+  font-size: 14px;
 }
 
 .income {
-  background: linear-gradient(135deg, #8e2de2, #4a00e0);
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
 }
 
 .expense {
   background: linear-gradient(135deg, #ff7e5f, #ff3d2e);
 }
 
-/* title */
+/* section title */
 .title {
-  margin-top: 15px;
+  margin-top: 20px;
+  font-weight: 600;
 }
 
-/* chart */
+/* charts */
 canvas {
   background: white;
   border-radius: 15px;
   padding: 10px;
+  margin-top: 10px;
+}
+
+/* transactions */
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  background: white;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.05);
 }
 
 /* form */
 form {
   margin-top: 15px;
   background: white;
-  padding: 10px;
+  padding: 12px;
   border-radius: 15px;
 }
 
@@ -73,28 +94,18 @@ form input, form select {
   width: 100%;
   margin: 5px 0;
   padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
 }
 
 form button {
   width: 100%;
-  background: #ff7e5f;
+  background: linear-gradient(135deg, #ff7e5f, #ff3d2e);
   color: white;
   padding: 10px;
   border: none;
   border-radius: 10px;
-}
-
-/* list */
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  background: white;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  margin-top: 5px;
 }
 
 .delete {
