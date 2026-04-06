@@ -1,38 +1,40 @@
 body {
+  background: #eaeaf0;
   font-family: Arial;
-  background: #f5f6fa;
-  margin: 0;
 }
 
-/* main app */
-.app {
+/* phone style container */
+.phone {
   width: 350px;
   margin: auto;
-  padding: 20px;
+  background: #f9f9fb;
+  padding: 15px;
+  border-radius: 30px;
 }
 
 /* header */
-.header {
+.top {
   text-align: center;
   margin-bottom: 10px;
 }
 
 /* balance card */
-.balance-card {
-  background: linear-gradient(135deg, #6a5cff, #3b2eff);
+.balance {
+  background: linear-gradient(135deg, #3b2eff, #6a5cff);
   color: white;
-  padding: 25px;
+  padding: 20px;
   border-radius: 20px;
   margin-bottom: 15px;
 }
 
-/* mini cards */
-.mini-cards {
+/* row */
+.row {
   display: flex;
   justify-content: space-between;
 }
 
-.mini {
+/* small cards */
+.box {
   width: 48%;
   padding: 15px;
   border-radius: 15px;
@@ -45,6 +47,18 @@ body {
 
 .expense {
   background: linear-gradient(135deg, #ff7e5f, #ff3d2e);
+}
+
+/* title */
+.title {
+  margin-top: 15px;
+}
+
+/* chart */
+canvas {
+  background: white;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 /* form */
@@ -63,42 +77,24 @@ form input, form select {
 
 form button {
   width: 100%;
-  padding: 10px;
   background: #ff7e5f;
   color: white;
+  padding: 10px;
   border: none;
   border-radius: 10px;
 }
 
-/* section */
-.section-title {
-  margin-top: 20px;
-}
-
-/* charts */
-.charts {
-  display: flex;
-  flex-direction: column;
-}
-
-canvas {
-  background: white;
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 15px;
-}
-
 /* list */
-.list {
-  margin-top: 10px;
-  background: white;
-  border-radius: 15px;
-  padding: 10px;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
 li {
+  background: white;
+  margin-top: 10px;
   padding: 10px;
-  border-bottom: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .delete {
