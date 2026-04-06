@@ -1,30 +1,36 @@
 body {
   font-family: Arial;
   margin: 0;
-  background: url("https://images.unsplash.com/photo-1554224155-6726b3ff858f") no-repeat center center/cover;
+  background: #f5f7fb;
 }
 
-/* glass effect */
+/* hero section */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+}
+
+.hero-text h1 {
+  font-size: 32px;
+}
+
+.hero-text p {
+  font-size: 16px;
+}
+
+.hero-img img {
+  width: 200px;
+}
+
+/* main container */
 .container {
   width: 85%;
   margin: auto;
   margin-top: 20px;
-  background: rgba(255, 255, 255, 0.85);
-  padding: 20px;
-  border-radius: 15px;
-  backdrop-filter: blur(10px);
-}
-
-h1 {
-  text-align: center;
-  background: linear-gradient(to right, #007bff, #00c6ff);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.sub {
-  text-align: center;
-  color: gray;
 }
 
 /* form */
@@ -33,22 +39,21 @@ form {
   flex-wrap: wrap;
   justify-content: space-between;
   background: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
 }
 
 form input, form select {
   width: 18%;
-  padding: 8px;
+  padding: 10px;
   margin: 5px;
 }
 
 form button {
   padding: 10px;
-  background: linear-gradient(45deg, #007bff, #00c6ff);
+  background: #007bff;
   color: white;
   border: none;
-  cursor: pointer;
   border-radius: 5px;
 }
 
@@ -65,20 +70,13 @@ form button {
   background: white;
   text-align: center;
   border-radius: 10px;
-  transition: 0.3s;
-  background: linear-gradient(135deg, #ffffff, #f0f0f0);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  font-weight: bold;
-}
-
-.card:hover {
-  transform: scale(1.05);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
 .income { color: green; }
 .expense { color: red; }
 
-/* charts smaller */
+/* charts */
 .charts {
   display: flex;
   justify-content: space-between;
@@ -86,7 +84,7 @@ form button {
 }
 
 canvas {
-  width: 40% !important;
+  width: 45% !important;
   height: 250px !important;
   background: white;
   padding: 10px;
@@ -95,42 +93,24 @@ canvas {
 
 /* search */
 #search {
-  margin-top: 20px;
   width: 100%;
   padding: 10px;
+  margin-top: 20px;
 }
 
 /* list */
 .list {
   margin-top: 20px;
   background: white;
-  padding: 10px;
+  padding: 15px;
   border-radius: 10px;
 }
 
 li {
-  padding: 8px;
+  padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
 .delete {
   color: red;
-}
-
-.timeline {
-  margin-top: 20px;
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-}
-
-.timeline-item {
-  border-left: 3px solid #007bff;
-  padding-left: 10px;
-  margin: 10px 0;
-}
-
-.timeline-item span {
-  color: gray;
-  font-size: 12px;
 }
