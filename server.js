@@ -1,93 +1,63 @@
-// main server file
-
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
 
 const app = express();
 
-// middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// connect mongodb
+// MongoDB Atlas connection
 mongoose.connect("mongodb+srv://chaitanya07_07:chaitanya123@cluster0.ydqjanx.mongodb.net/expenseDB")
   .then(() => console.log("MongoDB connected"))
   .catch(err => console.log(err));
 
-// model
 const Transaction = require("./models/Transaction");
 
-// home page
+// home
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "views/index.html"));
 });
 
-// add transaction
+// add
 app.post("/add", async (req, res) => {
-  const data = req.body;
-
-  const newTransaction = new Transaction({
-    title: data.title,
-    amount: data.amount,
-    type: data.type,
-    category: data.category,
-    date: data.date
-  });
-
-  await newTransaction.save();
-
+  const t = new Transaction(req.body);
+  await t.save();
   res.redirect("/");
 });
 
-// get all transactions
+// get all
 app.get("/get", async (req, res) => {
   const data = await Transaction.find();
   res.json(data);
 });
 
-// delete transaction
+// delete
 app.get("/delete/:id", async (req, res) => {
-  const id = req.params.id;
-
-  await Transaction.findByIdAndDelete(id);
-
+  await Transaction.findByIdAndDelete(req.params.id);
   res.redirect("/");
 });
 
 // summary
 app.get("/summary", async (req, res) => {
-  const transactions = await Transaction.find();
+  const data = await Transaction.find();
 
   let income = 0;
   let expense = 0;
 
   for (let i = 0; i < data.length; i++) {
-  const item = document.createElement("li");
-
-  let colorClass = data[i].type === "income" ? "income" : "expense";
-
-  item.innerHTML =
-    "<span class='" + colorClass + "'>" +
-    data[i].title + " - ₹" + data[i].amount +
-    " (" + data[i].category + ")" +
-    "</span>" +
-    "<a class='delete-btn' href='/delete/" + data[i]._id + "'>Delete</a>";
-
-  list.appendChild(item);
-}
-
-  const balance = income - expense;
+    if (data[i].type === "income") income += data[i].amount;
+    else expense += data[i].amount;
+  }
 
   res.json({
     totalIncome: income,
     totalExpense: expense,
-    balance: balance
+    balance: income - expense
   });
 });
 
-// start server
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
