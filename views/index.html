@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>💰 Expense Tracker Dashboard</h1>
+
+  <!-- form -->
+  <form action="/add" method="POST">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="number" name="amount" placeholder="Amount" required>
+
+    <select name="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <input type="text" name="category" placeholder="Category">
+    <input type="date" name="date">
+
+    <button type="submit">Add</button>
+  </form>
+
+  <!-- summary -->
+  <div class="summary">
+    <div class="card">
+      <h3>Income</h3>
+      <h2 class="income">₹<span id="income">0</span></h2>
+    </div>
+
+    <div class="card">
+      <h3>Expense</h3>
+      <h2 class="expense">₹<span id="expense">0</span></h2>
+    </div>
+
+    <div class="card">
+      <h3>Balance</h3>
+      <h2>₹<span id="balance">0</span></h2>
+    </div>
+  </div>
+
+  <!-- transactions -->
+  <div class="list">
+    <h2>Transactions</h2>
+    <ul id="list"></ul>
+  </div>
+
+</div>
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
