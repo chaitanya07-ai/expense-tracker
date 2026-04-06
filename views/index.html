@@ -3,13 +3,15 @@
 <head>
   <title>Expense Tracker</title>
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body>
 
 <div class="container">
 
-  <h1>💰 Expense Tracker Dashboard</h1>
+  <h1>💰 Expense Tracker</h1>
+  <p class="sub">Track your income and expenses easily</p>
 
   <!-- form -->
   <form action="/add" method="POST">
@@ -29,25 +31,22 @@
 
   <!-- summary -->
   <div class="summary">
-    <div class="card">
-      <h3>Income</h3>
-      <h2 class="income">₹<span id="income">0</span></h2>
-    </div>
-
-    <div class="card">
-      <h3>Expense</h3>
-      <h2 class="expense">₹<span id="expense">0</span></h2>
-    </div>
-
-    <div class="card">
-      <h3>Balance</h3>
-      <h2>₹<span id="balance">0</span></h2>
-    </div>
+    <div class="card income">Income ₹<span id="income">0</span></div>
+    <div class="card expense">Expense ₹<span id="expense">0</span></div>
+    <div class="card">Balance ₹<span id="balance">0</span></div>
   </div>
 
-  <!-- transactions -->
+  <!-- charts -->
+  <div class="charts">
+    <canvas id="pieChart"></canvas>
+    <canvas id="barChart"></canvas>
+  </div>
+
+  <!-- search -->
+  <input type="text" id="search" placeholder="Search..." onkeyup="searchData()">
+
+  <!-- list -->
   <div class="list">
-    <h2>Transactions</h2>
     <ul id="list"></ul>
   </div>
 
