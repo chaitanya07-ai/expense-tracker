@@ -24,8 +24,9 @@ function loadData() {
         let li = document.createElement("li");
 
         li.innerHTML =
-          t.title + " ₹" + t.amount +
+          "<b>" + t.title + "</b> ₹" + t.amount +
           " (" + t.category + ")" +
+          "<br><small>" + new Date(t.date).toDateString() + "</small>" +
           " <a class='delete' href='/delete/" + t._id + "'>Delete</a>";
 
         list.appendChild(li);
